@@ -15,3 +15,13 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import UIkit from 'uikit/dist/js/uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+import './stylesheets/application'
+
+// loads the Icon plugin
+UIkit.use(Icons);
+
+// components can be called from the imported UIkit reference
+UIkit.notification('Hello world.');
