@@ -1,0 +1,2 @@
+module UiSamplesHelper
+end
