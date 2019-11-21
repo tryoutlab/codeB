@@ -4,5 +4,8 @@
 	</div>
 </header>
 <div class="uk-container">
-
+  <%= form_with url: repos_result_path do |f| %>
+    <%= f.text_field :reposurl, class: 'uk-input repos-input' %>
+    <%= f.submit %>
+  <% end %>
 </div>
