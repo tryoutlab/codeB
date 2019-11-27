@@ -1,6 +1,6 @@
 class ReposController < ApplicationController
-  def result
-    p params
+  def create
+        
   end
 
   private 
