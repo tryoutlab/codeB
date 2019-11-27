@@ -1,5 +1,5 @@
 <div class="uk-container">
-  <%= form_with url: repos_result_path, local: true, class: 'repos-form' do |f| %>
+  <%= form_with model:@repo local: true, class: 'repos-form' do |f| %>
     <%= f.label  :reposurl, 'GitHubのリポジトリURL', class: 'uk-text-capitalize' %>
     <%= f.text_field :reposurl, class: 'uk-input repos-input' %>
     <%= f.submit class: 'uk-button uk-button-primary', value: 'CHECK!' %>
