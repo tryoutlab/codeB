@@ -1,6 +1,3 @@
-class Repo
-  include ActiveModel::Model
-  attr_accessor :repo
-
-  validate :repo , presence: true
+class Repo < ApplicationRecord
+  validates :repourl, presence: true
 end

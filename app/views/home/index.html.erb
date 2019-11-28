@@ -1,7 +1,10 @@
 <div class="uk-container">
-  <%= form_with model:@repo local: true, class: 'repos-form' do |f| %>
-    <%= f.label  :reposurl, 'GitHubのリポジトリURL', class: 'uk-text-capitalize' %>
-    <%= f.text_field :reposurl, class: 'uk-input repos-input' %>
+  <% @repo.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  <%= form_with model:@repo, local: true, class: 'repos-form' do |f| %>
+    <%= f.label  :repourl, 'GitHubのリポジトリURL', class: 'uk-text-capitalize' %>
+    <%= f.text_field :repourl, class: 'uk-input repos-input' %>
     <%= f.submit class: 'uk-button uk-button-primary', value: 'CHECK!' %>
   <% end %>
 </div>
