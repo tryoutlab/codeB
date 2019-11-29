@@ -5,9 +5,9 @@ class HomeController < ApplicationController
 
   def check
     @repo = Repo.new(repo_params)
-    if @repo.save
+    if @repo.valid?
       # 成功した場合
-      render 'repos/create'
+      render 'home/index'
     else
       # 失敗した場合
       render 'home/index'
