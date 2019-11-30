@@ -8,8 +8,9 @@ class HomeController < ApplicationController
     @repo = Repo.new(repo_params)
     if @repo.valid?
       # 成功した場合
-      download_repo(repo_params[:repourl])
-      render 'home/index'
+      @cmd_result = download_repo(repo_params[:repourl])
+      puts @cmd_result
+      render 'home/check'
     else
       # 失敗した場合
       render 'home/index'
@@ -22,11 +23,12 @@ class HomeController < ApplicationController
   end
 
   def download_repo(repo_url)
-    Open3.popen3("wget #{repo_url}") do |i, o, e, w|
+    o, e, s = Open3.capture3("wget #{repo_url}")
+    e
+    #Open3.popen3("wget #{repo_url}") do |i, o, e, w|
       
       # コマンド結果はstderr(エラー出力)に返される
-      e.each { |line| puts line }
+      #e.each { |line| puts line }
 
-    end
   end
 end
