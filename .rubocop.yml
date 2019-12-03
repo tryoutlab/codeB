@@ -1,16 +1,23 @@
 inherit_gem:
   onkcop:
-    - "config/rubocop.yml"
+    # - "config/rubocop.yml"
     # uncomment if use rails cops
-    # - "config/rails.yml"
+    - "config/rails.yml"
     # uncomment if use rspec cops
-    # - "config/rspec.yml"
+    - "config/rspec.yml"
 
 AllCops:
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.6
   TargetRailsVersion: 6.0
   Exclude:
     - "vendor/**/*" # rubocop config/default.yml
     - "db/schema*.rb"
+    - "db/seeds.rb"
     - "node_modules/**/*"
     - "db/migrate/**/*"
+    - "bin/*"
+    - "config/**/*"
+    - "test/**/*"
+    - "Gemfile"
+    - "Rakefile"
+    - "config.ru"
